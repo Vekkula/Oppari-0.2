@@ -1,20 +1,17 @@
 package com.example.oppari02;
 
+import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
+import android.support.v7.app.AppCompatActivity;
+import android.view.MenuItem;
 import android.view.View;
-import android.widget.TextView;
-
-import org.w3c.dom.Text;
 
 
-public class humidityActivity extends MainActivity
-        implements NavigationView.OnNavigationItemSelectedListener
-
-{
+public class humidityActivity extends AppCompatActivity // <- extend this instead of MainActivity
+        implements NavigationView.OnNavigationItemSelectedListener {
     @Override
-    protected void onStart () {
+    protected void onStart() {
         super.onStart();
-
 
         View m = findViewById(R.id.textView);   //tämä "poistaa" etusivun tekstin/sisällön
         m.setVisibility(View.GONE);   //tämä "poistaa" etusivun tekstin/sisällön
@@ -23,4 +20,8 @@ public class humidityActivity extends MainActivity
         h.setVisibility(View.VISIBLE);
     }
 
+    @Override
+    public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
+        return false;
+    }
 }

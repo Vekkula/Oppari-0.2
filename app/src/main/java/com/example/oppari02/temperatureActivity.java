@@ -1,18 +1,13 @@
 package com.example.oppari02;
 
-        import android.support.design.widget.NavigationView;
-        import android.view.View;
-        import android.widget.TextView;
+import android.support.design.widget.NavigationView;
+import android.view.View;
 
-        import org.w3c.dom.Text;
-
-
+//todo luokanimet alkaa isolla
 public class temperatureActivity extends MainActivity
-        implements NavigationView.OnNavigationItemSelectedListener
-
-{
+        implements NavigationView.OnNavigationItemSelectedListener {
     @Override
-    protected void onStart () {
+    protected void onStart() {
         super.onStart();
 
         View m = findViewById(R.id.textView);   //tämä "poistaa" etusivun tekstin/sisällön

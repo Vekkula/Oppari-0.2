@@ -3,23 +3,18 @@ package com.example.oppari02;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
-import android.view.View;
-import android.support.v4.view.GravityCompat;
-import android.support.v7.app.ActionBarDrawerToggle;
-import android.view.MenuItem;
 import android.support.design.widget.NavigationView;
+import android.support.design.widget.Snackbar;
+import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
-
+import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
-import android.widget.TextView;
-import android.widget.Toast;
+import android.view.MenuItem;
+import android.view.View;
 
-import org.w3c.dom.Text;
-
-public class MainActivity extends AppCompatActivity
+public class MainActivity extends AppCompatActivity //todo voisiko olla Activity jos min. Api on 24
         implements NavigationView.OnNavigationItemSelectedListener {
 
 
@@ -27,9 +22,14 @@ public class MainActivity extends AppCompatActivity
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        //todo miks nää on UI oliot on metodin sisäisiä
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        FloatingActionButton fab = findViewById(R.id.fab);  /* Pikkunäppäin näytön alanurkassa (s-posti tms.) */
+        //Pikkunäppäin näytön alanurkassa (s-posti tms.) //todo itseään selittävää nimeämistä tähän
+        FloatingActionButton fab = findViewById(R.id.fab);
+
+        //lambdat
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -37,6 +37,8 @@ public class MainActivity extends AppCompatActivity
                         .setAction("Action", null).show();
             }
         });
+
+        //vähän selitystä ehkä tähän
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         NavigationView navigationView = findViewById(R.id.nav_view);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -84,8 +86,6 @@ public class MainActivity extends AppCompatActivity
         return super.onOptionsItemSelected(item);
     }
 
-
-    @SuppressWarnings("StatementWithEmptyBody")
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
         // Handle navigation view item clicks here.
@@ -100,7 +100,6 @@ public class MainActivity extends AppCompatActivity
             launchAirPressureActivity();
         } else if (id == R.id.nav_share) {
             //tänne ei välttämättä mitään
-
         }
 
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
@@ -108,23 +107,23 @@ public class MainActivity extends AppCompatActivity
         return true;
     }
 
-    private void launchMainActivity(){
-        Intent home = new Intent (this, MainActivity.class);
+    private void launchMainActivity() {
+        Intent home = new Intent(this, MainActivity.class);
         startActivity(home);
     }
 
-    private void launchTemperatureActivity(){
+    private void launchTemperatureActivity() {
         Intent temperature = new Intent(this, temperatureActivity.class);
         startActivity(temperature);
     }
 
-    private void launchHumidityActivity(){
-        Intent humidity = new Intent (this, humidityActivity.class);
+    private void launchHumidityActivity() {
+        Intent humidity = new Intent(this, humidityActivity.class);
         startActivity(humidity);
     }
 
-    private void launchAirPressureActivity(){
-        Intent airPressure = new Intent (this, airPressureActivity.class);
+    private void launchAirPressureActivity() {
+        Intent airPressure = new Intent(this, AirPressureActivity.class);
         startActivity(airPressure);
     }
 

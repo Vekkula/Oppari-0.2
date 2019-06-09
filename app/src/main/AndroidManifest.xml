@@ -29,7 +29,7 @@
         android:theme="@style/AppTheme.NoActionBar">
     </activity>
         <activity
-            android:name=".airPressureActivity"
+            android:name=".AirPressureActivity"
             android:label="Oppari 0.2 - Air Pressure"
             android:theme="@style/AppTheme.NoActionBar">
         </activity>

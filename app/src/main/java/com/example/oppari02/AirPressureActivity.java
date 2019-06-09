@@ -2,17 +2,12 @@ package com.example.oppari02;
 
 import android.support.design.widget.NavigationView;
 import android.view.View;
-import android.widget.TextView;
-
-import org.w3c.dom.Text;
 
 
-public class airPressureActivity extends MainActivity
-        implements NavigationView.OnNavigationItemSelectedListener
-
-{
+public class AirPressureActivity extends MainActivity //miksi tässä on MainActivity miksi nää ei oo fragmenttejä
+        implements NavigationView.OnNavigationItemSelectedListener {
     @Override
-    protected void onStart () {
+    protected void onStart() {
         super.onStart();
 
         View m = findViewById(R.id.textView);   //tämä "poistaa" etusivun tekstin/sisällön
@@ -21,5 +16,6 @@ public class airPressureActivity extends MainActivity
         View p = findViewById(R.id.textAirPressure);
         p.setVisibility(View.VISIBLE);
     }
+
 
 }
